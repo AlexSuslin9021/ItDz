@@ -1,16 +1,34 @@
 .friendMessage {
+    margin-top: 47px;
+    margin-left: 47px;
+
+
 
 }
 
 .friendImageAndText {
+    display: flex;
+
+
+
+
 
 }
 
 .friendImageAndText img {
+width: 48px;
 
 }
 
 .friendText {
+    margin-right:5px ;
+   border:1px solid lightgrey;
+    border-radius: 5px;
+    background: #F5F7FB
+;
+
+
+
 
 }
 
@@ -27,5 +45,5 @@
 }
 
 .friendTime {
-
+margin-top: 8px;
 }

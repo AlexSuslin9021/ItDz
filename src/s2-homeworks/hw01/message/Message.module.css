@@ -1,16 +1,35 @@
 .message {
+margin-right:47px ;
 
 }
 
 .imageAndText {
 
+    display: flex;
+
+    flex-direction: row-reverse;
+
+
 }
 
 .imageAndText img {
 
+width: 48px;
+
+
 }
 
 .text {
+    margin-right:5px ;
+    border: 1px solid lightgrey;
+    border-radius: 5px 10px 0 5px;
+
+    background: #0066CC;
+    color: white;
+    box-shadow: 0 1px 2px 0 #1D21261A;
+
+    box-shadow: 0 5px 20px 0 #1D212608;
+
 
 }
 
@@ -27,5 +46,7 @@
 }
 
 .time {
-
+    display: flex;
+    justify-content: flex-end   ;
+    margin-top: 8px;
 }
