@@ -3,6 +3,7 @@ import { v1 } from 'uuid'
 import s2 from '../../s1-main/App.module.css'
 import GreetingContainer from './GreetingContainer'
 
+
 /*
 * 1 - описать тип UserType
 * 2 - указать нужный тип в useState с users
@@ -18,21 +19,26 @@ import GreetingContainer from './GreetingContainer'
 * */
 
 // types
-export type UserType = {
-    _id: any // need to fix any
-    name: any // need to fix any
+export type UserType = {//типизация
+    _id: string // need to fix any
+    name: string // need to fix any
 }
 
-export const pureAddUserCallback = (name: any, setUsers: any, users: any) => { // need to fix any
-    const user = { // need to fix
+//функция добавляющая пользователя
+export const pureAddUserCallback = (name: string, setUsers:any , users:UserType[] ) => { // need to fix any
+    const user = { _id: v1(),
+        name:name
     }
-    setUsers([...users, user])
+    if(user.name==='') return users
+      else  setUsers([...users, user])
+
 }
 
 const HW3 = () => {
-    const [users, setUsers] = useState<any>([]) // need to fix any
+    //начальные данные
+    const [users, setUsers] = useState<UserType[]>([]) // need to fix any
 
-    const addUserCallback = (name: any) => { // need to fix any
+    const addUserCallback = (name: string) => { // need to fix any
         pureAddUserCallback(name, setUsers, users)
     }
 
