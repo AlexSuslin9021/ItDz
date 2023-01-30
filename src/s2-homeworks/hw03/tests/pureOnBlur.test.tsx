@@ -12,7 +12,7 @@ beforeEach(() => {
     error = ''
 })
 
-test.skip('name 1', () => {
+test('name 1', () => {
     name = '1'
     pureOnBlur(name, setError)
     expect(error).toBe('')

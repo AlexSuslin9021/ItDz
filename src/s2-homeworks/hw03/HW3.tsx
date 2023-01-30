@@ -24,15 +24,19 @@ export type UserType = {//типизация
     name: string // need to fix any
 }
 
-//функция добавляющая пользователя
-export const pureAddUserCallback = (name: string, setUsers:any , users:UserType[] ) => { // need to fix any
+
+export const pureAddUserCallback = (name: string, setUsers:any , users:UserType[] ) => {
+
+    // if(users.length!==0) return users[users.length-1].name
+     // need to fix any
+
     const user = { _id: v1(),
         name:name
     }
-    if(user.name==='') return users
-      else  setUsers([...users, user])
+     setUsers([...users, user])
 
 }
+
 
 const HW3 = () => {
     //начальные данные

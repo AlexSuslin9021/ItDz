@@ -2,6 +2,7 @@
 }
 
 .input {
+    border: 3px solid green;
 }
 
 .inputWrapper {
@@ -17,4 +18,5 @@
 }
 
 .error {
+    color:red
 }
