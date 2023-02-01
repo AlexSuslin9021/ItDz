@@ -2,6 +2,7 @@ import React from 'react'
 import { HashRouter } from 'react-router-dom'
 import { Layout } from './layout/Layout'
 import Pages from './Pages'
+import {Header} from "./header/Header";
 
 /*
 * 1 - в файле Pages.tsx дописать роуты на все страницы
