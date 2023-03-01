@@ -1,5 +1,20 @@
 .buttonsContainer {
+
+margin-top: 10px;
 }
 
 .editableSpanContainer {
+    margin-top: 20px;
+    margin-left: 20px;
+    color:lightskyblue;
+
+
+
+}
+.editableSpanContainer input{
+    height: 36px;
+    width: 276px;
+    border-radius: 5px;
+    font-size: 16px;
+
 }
