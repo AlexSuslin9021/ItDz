@@ -36,16 +36,28 @@ background: #cc9c00;
 }
 
 .red {
-    background:red
+    background:  red;
+    border: none;
+    margin-left:20px ;
+    height: 30px;
+    width: 130px;
+    left: 70px;
+    top: 244px;
+    border-radius: 3px;
+    padding: 5px 24px 5px 24px;
+    color:white;
 }
 
 .default:hover {
+
 }
 
 .red:hover {
 }
 
 .secondary:hover {
+    background: lightskyblue;
+    color: beige;
 }
 
 
@@ -59,4 +71,14 @@ background: #cc9c00;
 }
 
 .button:disabled {
+    background: #e5cf95;
+    border: none;
+    margin-left:20px ;
+    height: 30px;
+    width: 130px;
+    left: 70px;
+    top: 244px;
+    border-radius: 3px;
+    padding: 5px 24px 5px 24px;
+    color:black;
 }
