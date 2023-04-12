@@ -14,14 +14,19 @@ import {useSearchParams} from 'react-router-dom'
 * */
 
 const getTechs = (find: string) => {
+
     return axios
         .get<{ techs: string[] }>(
-            'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test2',
-            {params: {find}}
+            ' https://samurai.it-incubator.io/api/3.0/homework/test2',
+            {
+                params: {find},
+                //withCredentials:true,
+            }
         )
-        .catch((e) => {
-            alert(e.response?.data?.errorText || e.message)
-        })
+         .catch((e) => {
+    console.log({...e})
+            // alert(e.response?.data?.errorText || e.message)
+         })
 }
 
 const HW14 = () => {
@@ -31,9 +36,14 @@ const HW14 = () => {
     const [techs, setTechs] = useState<string[]>([])
 
     const sendQuery = (value: string) => {
-        setLoading(true)
+
+
         getTechs(value)
+
             .then((res) => {
+
+                setLoading(false)
+               res && setTechs(res.data.techs)
                 // делает студент
 
                 // сохранить пришедшие данные
@@ -45,9 +55,9 @@ const HW14 = () => {
     const onChangeText = (value: string) => {
         setFind(value)
         // делает студент
-
+        setLoading(true)
         // добавить/заменить значение в квери урла
-        // setSearchParams(
+        setSearchParams({find:value})
 
         //
     }
@@ -58,7 +68,7 @@ const HW14 = () => {
         setFind(params.find || '')
     }, [])
 
-    const mappedTechs = techs.map(t => (
+    const mappedTechs = techs.map(t => ( //выводит список технологий
         <div key={t} id={'hw14-tech-' + t} className={s.tech}>
             {t}
         </div>
@@ -74,6 +84,7 @@ const HW14 = () => {
                     value={find}
                     onChangeText={onChangeText}
                     onDebouncedChange={sendQuery}
+
                 />
 
                 <div id={'hw14-loading'} className={s.loading}>
