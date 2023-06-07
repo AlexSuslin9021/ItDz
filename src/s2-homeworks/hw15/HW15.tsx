@@ -6,6 +6,7 @@ import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import {useSearchParams} from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
 
+
 /*
 * 1 - дописать SuperPagination
 * 2 - дописать SuperSort
@@ -51,6 +52,12 @@ const HW15 = () => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
+                setLoading(false)
+
+                if (res) {
+                    setTechs(res.data.techs)
+                    setTotalCount(res.data.totalCount)
+                }
                 // делает студент
 
                 // сохранить пришедшие данные
@@ -62,24 +69,28 @@ const HW15 = () => {
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
 
-        // setPage(
-        // setCount(
+        setPage(newPage)
+        setCount(newCount)
 
+
+        sendQuery({page: newPage, count: newCount, sort})
         // sendQuery(
         // setSearchParams(
-
+       setSearchParams({page: page.toString(), count: count.toString()})
         //
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
 
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        setSort(newSort)
+        setPage(1) // при сортировке сбрасывать на 1 страницу
 
         // sendQuery(
-        // setSearchParams(
 
+        // setSearchParams(
+        sendQuery({page, count, sort: newSort})
+        setSearchParams({page: page.toString(), count: count.toString()})
         //
     }
 

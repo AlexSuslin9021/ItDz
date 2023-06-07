@@ -28,7 +28,6 @@ function HW11() {
     return (
         <div id={'hw11'}>
             <div className={s2.hwTitle}>Homework #11</div>
-
             <div className={s2.hw}>
                 <div className={s.container}>
                     <div className={s.wrapper}>
@@ -37,7 +36,6 @@ function HW11() {
                             id={'hw11-single-slider'}
                             value={value1}
                             onChange={change}
-
                         />
                     </div>
                     <div className={s.wrapper}>
